@@ -2,7 +2,7 @@
 Library           RequestsLibrary
 
 *** Variables ***
-${BASE_URL}       http://127.0.0.1:5000/plus
+${BASE_URL}       http://127.0.0.1:5001/plus
 
 *** Keywords ***
 
