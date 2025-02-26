@@ -18,31 +18,31 @@ Get Calculation JSON
 
 Test Plus Numbers 8 and 4
     ${json_resp}=    Get Calculation JSON    8    4    200
-    Should Be Equal As Numbers    ${json_resp['result']}    1
+    Should Be Equal As Numbers    ${json_resp['result']}    12
 Test Plus Numbers 4 and 2
     ${json_resp}=    Get Calculation JSON    4    2    200
-    Should Be Equal As Numbers    ${json_resp['result']}    
+    Should Be Equal As Numbers    ${json_resp['result']}    6
 Test Plus Numbers 8.4 and 4
     ${json_resp}=    Get Calculation JSON    8.4    4    200
-    Should Be Equal As Numbers    ${json_resp['result']}    12.
+    Should Be Equal As Numbers    ${json_resp['result']}    12.4
 Test Plus Numbers 4 and 8.4
     ${json_resp}=    Get Calculation JSON    4    8.4    200
-    Should Be Equal As Numbers    ${json_resp['result']}    12.
+    Should Be Equal As Numbers    ${json_resp['result']}    12.4
 Test Plus Numbers -4 and 2
     ${json_resp}=    Get Calculation JSON    -4    2    200
-    Should Be Equal As Numbers    ${json_resp['result']}    -
+    Should Be Equal As Numbers    ${json_resp['result']}    -2
 Test Plus Numbers 4 and -2
     ${json_resp}=    Get Calculation JSON    4    -2    200
-    Should Be Equal As Numbers    ${json_resp['result']}    
+    Should Be Equal As Numbers    ${json_resp['result']}    2
 Test Plus Numbers -4 and -2
     ${json_resp}=    Get Calculation JSON    -4    -2    200
-    Should Be Equal As Numbers    ${json_resp['result']}    -
+    Should Be Equal As Numbers    ${json_resp['result']}    -6
 Test Plus Numbers a and b
     ${json_resp}=    Get Calculation JSON    a   b    400
-    Should Be Equal   ${json_resp['error_msg']}    inputs must be number
+    Should Be Equal   ${json_resp['error_msg']}    inputs must be numbers
 Test Plus Numbers 0 and b
     ${json_resp}=    Get Calculation JSON    0    b    400
-    Should Be Equal   ${json_resp['error_msg']}    inputs must be number
+    Should Be Equal   ${json_resp['error_msg']}    inputs must be numbers
 Test Plus Numbers a and 0
     ${json_resp}=    Get Calculation JSON    a    0    400
     Should Be Equal    ${json_resp['error_msg']}    inputs must be numbers
